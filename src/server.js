@@ -2,9 +2,17 @@ const express = require("express");
 
 const app = express();
 
-app.get("/", (request, response) => {
-    response.send("Hello, word!");    
+
+
+app.get("/product/:id/:user", (request, response) => {
+    const {id, user} = request.params;
+    
+    response.send(`
+        Mensagem Id: ${id}.
+        Para o user: ${user}.
+    `);    
 })
 
 const PORT = 3333;
-app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`))
+app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`)
+)
