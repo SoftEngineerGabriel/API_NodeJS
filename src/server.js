@@ -1,22 +1,12 @@
 const express = require("express");
 
 const app = express();
+app.use(express.json())
 
+app.post("/users", (request, response)=> {
+    const {name, email , password}= request.body;
 
-/* usando route  params*/
-app.get("/product/:id/:user", (request, response) => {
-    const {id, user} = request.params;
-    
-    response.send(`
-        Mensagem Id: ${id}.
-        Para o user: ${user}.
-    `);    
-})
-/*usando query params*/
-app.get("/users", (request, response)=> {
-    const { page, limit} = request.query;
-
-    response.send(`Página: ${page}. Mostrar: ${limit}`)
+    response.send(`Usuário: ${name} email ${email} senha ${password}`)
 })
 
 const PORT = 3333;
