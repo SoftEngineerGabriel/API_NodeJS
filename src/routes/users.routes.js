@@ -1,6 +1,6 @@
-const {Router} = require ("express"); //importando o Router diretamente do Express.
+const {Router} = require ("express");
 
-const usersRoutes = Router(); //inicializando o Router já importado na primeira linha.
+const usersRoutes = Router();
 
 
 usersRoutes.post("/", (request, response) => {
@@ -9,4 +9,4 @@ usersRoutes.post("/", (request, response) => {
     response.json({name, email, password});
 });
 
-module.exports = usersRoutes; //exportando para qualquer arquivo que precise.
+module.exports = usersRoutes;

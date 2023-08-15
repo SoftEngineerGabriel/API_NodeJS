@@ -4,6 +4,6 @@ const usersRoutes = require ("./users.routes");
 
 const routes = Router();
 
-usersRoutes.use("/users", usersRoutes);
+routes.use("/users", usersRoutes);
 
-module.exports = routes;
+module.exports = routes; 
