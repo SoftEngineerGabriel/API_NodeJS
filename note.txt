@@ -1,0 +1,7 @@
+UserControllers
+
+index - GET para listar varios regitros
+show  - GET para exibir um regitro especifico
+create- POST para criar um registro
+update- PUT para atualizar um registro
+delete- DELETE para remover um registro
