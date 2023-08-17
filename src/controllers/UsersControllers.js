@@ -26,7 +26,7 @@ class UserController {
 
     async update(request, response){
         const {name, email} = request.body;
-        const {id} = request.body;
+        const {id} = request.params;
 
         const database = await sqliteConnection();
         const user = await database.get("SELECT * FROM users WHERE id = (?)", [id]);
@@ -49,7 +49,7 @@ class UserController {
             name = ?,
             email = ?,
             update_at = ?
-            WHERE id = ?`, [user.name. user.email, new Date(), id]
+            WHERE id = ?`, [user.name, user.email, new Date(), id]
             );
 
         return response.status(200).json();
